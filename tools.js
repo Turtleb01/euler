@@ -39,6 +39,18 @@ function gcd(a,b) {
   return(a);
 }
 
+//generate prime array
+function genprimes(a) {
+  let primes=Array(a).fill(true);
+  primes.splice(0,2,false,false);
+  for(let i=2; i<=Math.sqrt(primes.length); i++) {
+    for(let j=i*2; j<primes.length; j+=i) {
+      primes[j]=false;
+    }
+  }
+  return(primes);
+}
+
 Array.prototype.sum = function() {
   return(this.reduce((v,e)=>v+e,0));
 }
@@ -61,5 +73,5 @@ range = function(a,b) {
 }
 
 module.exports = {
-  collatz, gcd, divisors, divisorsum, range
+  collatz, gcd, divisors, divisorsum, range, genprimes
 };

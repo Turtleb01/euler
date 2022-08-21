@@ -3,7 +3,7 @@ const { genprimes } = require("./tools.js");
 const primes = genprimes(100000);
 const primeList = primes.map((e,i)=>e?i:false).filter(e=>e);
 function bigprime(a) {
-  return(primeList.every(e=>a%e));
+  return(a<primes.length?primes[a]:primeList.every(e=>a!=e&&a%e));
 }
 
 let a, i, j;

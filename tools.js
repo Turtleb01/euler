@@ -43,9 +43,11 @@ function gcd(a,b) {
 function genprimes(a) {
   let primes=Array(a).fill(true);
   primes.splice(0,2,false,false);
-  for(let i=2; i<=Math.sqrt(primes.length); i++) {
-    for(let j=i*2; j<primes.length; j+=i) {
-      primes[j]=false;
+  for(let i=2; i<=Math.sqrt(a); i++) {
+    if(primes[i]) {
+      for(let j=i*2; j<a; j+=i) {
+        primes[j]=false;
+      }
     }
   }
   return(primes);

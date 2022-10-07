@@ -13,4 +13,4 @@ function permutation(array,index) {
   return(output);
 }
 
-console.log(permutation(range(0,10),1000000-1).join(""));
+console.log(permutation(range(10),1000000-1).join(""));

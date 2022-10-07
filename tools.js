@@ -69,9 +69,9 @@ Number.prototype.factorialBigInt = function() {
   return(Array(this.valueOf()).fill().reduce((v,_,i)=>v*BigInt(i+1),1n));
 }
 
-range = function(a,b) {
+function range(a,b) {
   b||([a,b]=[0,a]);
-  return(Array(b).fill().map((_,i)=>i).slice(a));
+  return Array(b).fill().map((_,i)=>i+a);
 }
 
 module.exports = {

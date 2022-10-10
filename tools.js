@@ -70,7 +70,7 @@ Number.prototype.factorialBigInt = function() {
 }
 
 function range(a,b) {
-  b||([a,b]=[0,a]);
+  b===undefined&&([a,b]=[0,a]);
   return Array(b).fill().map((_,i)=>i+a);
 }
 
